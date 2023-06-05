@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MeetingView.swift
 //  Scrumdinger
 //
 //  Created by Pasha Otverchenko on 04.06.2023.
@@ -10,16 +10,23 @@ import SwiftUI
 struct MeetingView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            ProgressView(value: 5, total: 15)
+            
+            HStack {
+                VStack {
+                    Text("Seconds Elapsed")
+                    Label("300", systemImage: "hourglass.tophalf.fill")
+                }
+                VStack {
+                    Text("Seconds Remaining")
+                    Label("600", systemImage: "hourglass.bottomhalf.fill")
+                }
+            }
         }
-        .padding()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MeetingView_Previews: PreviewProvider {
     static var previews: some View {
         MeetingView()
     }

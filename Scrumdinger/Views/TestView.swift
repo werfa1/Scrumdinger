@@ -9,7 +9,31 @@ import SwiftUI
 
 struct TestView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                ZStack {
+                    Circle()
+                        .frame(width: 50)
+                    Circle()
+                        .fill(.blue)
+                        .frame(width: 20)
+                }
+                
+                ZStack {
+                    Circle()
+                        .frame(width: 50)
+                    Circle()
+                        .fill(.blue)
+                        .frame(width: 20)
+                }
+            }
+            .padding(.top, 50)
+            Path { path in
+                path.move(to: CGPoint(x: 180, y: 20))
+                path.addQuadCurve(to: CGPoint(x: 250, y: 20), control: CGPoint(x: 215, y: 45))
+            }
+            .stroke(Color.pink, lineWidth: 4)
+        }
     }
 }
 
